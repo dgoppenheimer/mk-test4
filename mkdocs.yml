@@ -13,6 +13,13 @@ theme:
     - navigation.tabs.sticky
     - navigation.top
 
+site_author: David G Oppenheimer
+site_description: >-
+  Notes for running and analyzing molecular dynamics simulations
+
+# Copyright
+copyright: Copyright &copy; 2022 David G Oppenheimer
+
 markdown_extensions:
   - admonition
   - pymdownx.details

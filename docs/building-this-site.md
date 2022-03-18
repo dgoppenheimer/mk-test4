@@ -90,12 +90,12 @@ markdown_extensions:
   - pymdownx.superfences
 ```
 
-- Create the `docs/overrides/assets/images` directories, and add the favicon and logo images:
+- Create the `material/overrides/assets/images` directories, and add the favicon and logo images:
 
 ```bash
-docs/overrides/assets/images/favicon.png
-docs/overrides/assets/logo.svg
-docs/overrides/favicon.ico
+material/overrides/assets/images/favicon.png
+material/overrides/assets/logo.svg
+material/overrides/favicon.ico
 ```
 
 Add the following to `mkdocs.yml` to tell mkdocs where to find theme overrides:
@@ -103,8 +103,8 @@ Add the following to `mkdocs.yml` to tell mkdocs where to find theme overrides:
 ```yaml
 theme:
   custom_dir: material
-  logo: assets/logo.svg
-  favicon: assets/images/favicon.png
+  logo: overrides/assets/logo.svg
+  favicon: overrides/assets/images/favicon.png
 ```
 
 !!! success
@@ -153,7 +153,7 @@ theme:
 
 Okay, I got most of the home page stuff shown on [Binbash Leverage™ Documentation](https://leverage.binbash.com.ar/), following their [GitHub repository](https://github.com/binbashar/le-ref-architecture-doc/) structure.
 
-To the `/docs/index.md` file add the following at the top of the files:
+To the `/docs/index.md` file add the following at the top of the file:
 
 ```md
 ---
@@ -161,5 +161,37 @@ title: Molecular Dynamics
 template: overrides/home.html
 ---
 ```
+
+!!! success
+
+    The site deployed properly and is visible on GitHub.
+
+Continue customization.
+
+### Remove the LinkedIn link
+
+Open `material/overrides/main.html` and delete the announcement bar.
+
+### Change Landing Page Image
+
+- Open `material/overrides/home.html` and under `<!-- Hero image -->`, change `src="assets/images/illustrations/home.png"` to `src="assets/images/illustration.png"`.
+- Also delete/change the text under `<!-- Hero content -->`.
+- Remove the other sections.
+
+### More Additions to `mkdocs.yml`
+
+```yaml
+site_author: David G Oppenheimer
+site_description: >-
+  Notes for running and analyzing molecular dynamics simulations
+
+# Copyright
+copyright: Copyright &copy; 2022 David G Oppenheimer
+```
+
+
+
+
+
 
 

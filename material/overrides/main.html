@@ -10,7 +10,7 @@
   {% endif %}
 
   <!-- The image needs to have an absolute URL -->
-  {% set image = config.site_url ~ 'assets/images/illustrations/banner.png' %}
+  {% set image = config.site_url ~ 'assets/images/illustrations/home-why.png' %}
 
   <!-- Open graph meta tags -->
   <meta property="og:type" content="website" />
@@ -23,7 +23,7 @@
   <meta property="og:image:height" content="568" />
 
   <!-- google-site-verification meta-tag -->
-  <meta name="google-site-verification" content="-Rj8YMCn9uu5IwOFdC-WfAzXp4ZOMJtYKxU40ZgcJIU" />
+  <!-- <meta name="google-site-verification" content="-Rj8YMCn9uu5IwOFdC-WfAzXp4ZOMJtYKxU40ZgcJIU" /> -->
 
 <!-- Extra stylesheets -->
 <!--  <link
@@ -32,23 +32,4 @@
   />-->
 {% endblock %}
 
-<!-- Announcement bar -->
-{% block announce %}
-  <!-- Extra stylesing -->
-  <style>
-      .md-announce a,
-      .md-announce a:focus,
-      .md-announce a:hover{color:currentColor}.md-announce
-      strong{white-space:nowrap}.md-announce
-  </style>
 
-<a href="https://www.linkedin.com/company/binbash">
-    For updates follow <strong style="color: #2a978d">@Binbash</strong> on
-    <span class="twemoji linkedin" style="color: #0e76a8">
-      {% include ".icons/fontawesome/brands/linkedin-in.svg" %}
-    </span>
-
-    <strong style="color: white">LinkedIn</strong>
-  </a>
-
-{% endblock %}
