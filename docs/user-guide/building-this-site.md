@@ -1,6 +1,4 @@
----
-title: Building This Site
----
+# Building This Site Long Title for Page
 
 ## Getting Started
 
@@ -209,6 +207,24 @@ In `material/overrides/main-styles.html` change the color for `linear-gradient(t
 }
 ```
 
+## Navigation
+
+The `nav` part of `mkdocs.yml` takes precedence when setting the page title. But I want a longer title on the page and a shorter one for the navigation links. I found this solution in the [mkdocs issues](https://github.com/mkdocs/mkdocs/issues/1795). Put this code in your `/overrides/main.html` file.
+
+```jinja
+{% extends "base.html" %}
+{% if page.toc|first is defined %}
+{% set _title = page.toc.items[0].title %}
+{% else %}
+{% set _title = page.title|striptags %}
+{% endif %}
+
+{% block htmltitle %}
+<title>{{ _title }}</title>
+{% endblock %}
+```
+
+Now just use an `<h1>` tag for any page title of any length. A shorter page title can be used in the `nav` section of `mkdocs.yml`.
 
 
 
