@@ -1,12 +1,19 @@
+#================================================================#
+# Site Information
+#================================================================#
+
 site_name: Molecular Dynamics
 site_author: David G Oppenheimer
 site_description: >-
   My notes for preparing, running, and analyzing molecular dynamics simulations using Google Colab and Jupyter notebooks
-
+repo_name: "dgoppenheimer/mk-test4"
 repo_url: https://github.com/dgoppenheimer/mk-test4
-
-# Copyright
+site_url: https://dgoppenheimer.github.io/mk-test4/
 copyright: Copyright &copy; 2022 David G Oppenheimer
+
+#================================================================#
+# Mkdocs Theme (Material Mkdocs) + Extras
+#================================================================#
 
 theme:
   name: material
@@ -21,9 +28,16 @@ theme:
     - navigation.tabs.sticky
     - navigation.top
 
+#================================================================#
+# Mkdocs Markdown Extensions, Plugins & extras
+#================================================================#
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - footnotes
 
+#================================================================#
+# Mkdocs Navigation Tree
+#================================================================#

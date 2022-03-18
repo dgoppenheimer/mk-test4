@@ -184,11 +184,10 @@ Open `material/overrides/main.html` and delete the announcement bar.
 site_author: David G Oppenheimer
 site_description: >-
   My notes for preparing, running, and analyzing molecular dynamics simulations using Google Colab and Jupyter notebooks
-
-# Copyright
-copyright: Copyright &copy; 2022 David G Oppenheimer
-
+site_url: https://dgoppenheimer.github.io/mk-test4/
+repo_name: "dgoppenheimer/mk-test4"
 repo_url: https://github.com/dgoppenheimer/mk-test4
+copyright: Copyright &copy; 2022 David G Oppenheimer
 ```
 
 ### Test Deploy on GitHub
@@ -197,7 +196,7 @@ Run the git stuff and push to GitHub.
 
 !!! success
 
-    Great. It works. I'll keep customizing the landing page and start setting up site navigation. It appears the previous failure to deploy had something to do with how I set up the landing page. Also I do not have `site_url: https://dgoppenheimer.github.io/mk-test/` in my `mkdocs.yml` file.
+    Great. It works. I'll keep customizing the landing page and start setting up site navigation. It appears the previous failure to deploy had something to do with how I set up the landing page.
 
 
 In `material/overrides/main-styles.html` change the color for `linear-gradient(to bottom, var(--md-primary-fg-color), #2a978d 99%, #fff 99%)` to `#BB8FCE`. This better matches the colors in the image better than the original teal.
