@@ -96,7 +96,7 @@ Add the following to `mkdocs.yml` to tell mkdocs where to find theme overrides:
 
 ```yaml
 theme:
-  custom_dir: overrides
+  custom_dir: docs/overrides
   logo: assets/logo.svg
   favicon: assets/images/favicon.png
 ```
