@@ -2,11 +2,11 @@ site_name: Molecular Dynamics
 
 theme:
   name: material
-  custom_dir: docs/overrides
+  custom_dir: material
   palette:
     primary: blue
-  logo: assets/logo.svg
-  favicon: assets/images/favicon.png
+  logo: overrides/assets/logo.svg
+  favicon: overrides/assets/images/favicon.png
   features:
     - navigation.tracking
     - navigation.tabs

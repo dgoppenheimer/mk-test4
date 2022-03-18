@@ -102,7 +102,7 @@ Add the following to `mkdocs.yml` to tell mkdocs where to find theme overrides:
 
 ```yaml
 theme:
-  custom_dir: docs/overrides
+  custom_dir: material
   logo: assets/logo.svg
   favicon: assets/images/favicon.png
 ```
@@ -150,3 +150,16 @@ theme:
   palette:
     primary: blue
 ```
+
+Okay, I got most of the home page stuff shown on [Binbash Leverage™ Documentation](https://leverage.binbash.com.ar/), following their [GitHub repository](https://github.com/binbashar/le-ref-architecture-doc/) structure.
+
+To the `/docs/index.md` file add the following at the top of the files:
+
+```md
+---
+title: Molecular Dynamics
+template: overrides/home.html
+---
+```
+
+
