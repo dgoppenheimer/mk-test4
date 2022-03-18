@@ -73,5 +73,23 @@ Go to GitHub &#8594; Settings &#8594; Pages &#8594; Source and choose `gh-pages`
 
     So far, so good. I'll start changing a few things and see when the site breaks.
 
+## Customize the Site
+
+Add the following to `mkdocs.yml`.
+
+```yaml
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+```
+
+- Create the `docs/overrides/assets/images` directories, and add the favicon and logo images:
+
+```bash
+docs/overrides/assets/images/favicon.png
+docs/overrides/assets/logo.svg
+docs/overrides/favicon.ico
+```
 
 
