@@ -69,5 +69,9 @@ jobs:
 
 Go to GitHub &#8594; Settings &#8594; Pages &#8594; Source and choose `gh-pages` branch, and click `Save`.
 
+!!! success
+
+    So far, so good. I'll start changing a few things and see when the site breaks.
+
 
 
