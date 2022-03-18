@@ -1,4 +1,10 @@
 site_name: Molecular Dynamics
+site_author: David G Oppenheimer
+site_description: >-
+  My notes for preparing, running, and analyzing molecular dynamics simulations using Google Colab and Jupyter notebooks
+
+# Copyright
+copyright: Copyright &copy; 2022 David G Oppenheimer
 
 theme:
   name: material
@@ -12,13 +18,6 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
-
-site_author: David G Oppenheimer
-site_description: >-
-  Notes for running and analyzing molecular dynamics simulations
-
-# Copyright
-copyright: Copyright &copy; 2022 David G Oppenheimer
 
 markdown_extensions:
   - admonition
