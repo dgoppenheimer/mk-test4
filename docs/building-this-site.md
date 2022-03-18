@@ -24,10 +24,23 @@ theme:
 ## Git Stuff
 
 ```bash
-
+# in the mk-test4 directory
+git init
+touch .gitignore
+echo ".DS_Store" >> .gitignore
+echo ".gitignore" >> .gitignore
+git status
+git add .
+git commit -m "initial commit"
 ```
 
+Go to GitHub and create a new repository `mk-test4`.
 
+```bash
+git remote add origin https://github.com/dgoppenheimer/mk-test4.git
+git branch -M main
+git push -u origin main
+```
 
 ## Publishing the Site
 
