@@ -1,11 +1,21 @@
 site_name: Molecular Dynamics
+
 theme:
   name: material
   custom_dir: docs/overrides
+  palette:
+    primary: blue
   logo: assets/logo.svg
   favicon: assets/images/favicon.png
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - footnotes
 

@@ -75,6 +75,12 @@ Go to GitHub &#8594; Settings &#8594; Pages &#8594; Source and choose `gh-pages`
 
 ## Customize the Site
 
+See the following pages for tips:
+
+- [How do I specify custom primary color for mkdocs-material?](https://stackoverflow.com/questions/63017898/how-do-i-specify-custom-primary-color-for-mkdocs-material)  
+- [Changing the colors](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/)  
+- [Customization](https://squidfunk.github.io/mkdocs-material/customization/)
+
 Add the following to `mkdocs.yml`.
 
 ```yaml
@@ -99,4 +105,48 @@ theme:
   custom_dir: docs/overrides
   logo: assets/logo.svg
   favicon: assets/images/favicon.png
+```
+
+!!! success
+
+    The site builds and deploys fine on GitHub.
+
+!!! info
+
+    I think the failure of the previous site to deploy to GitHub has to do with my changes to `index.html` or one of the partials when I created my landing page.
+
+### Navigation Features
+
+See [Setting up navigation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/) in the Material theme documentation for excellent instructions.
+
+Add the following to `mkdocs.yml`:
+
+```yaml
+theme:
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+```
+
+### Footnotes
+
+Add the following to `mkdocs.yml`:
+
+```yaml
+markdown_extensions:
+  - footnotes
+```
+
+### Change Colors on the Landing Page
+
+The lower purple is okay, but I want to see how it looks with a lighter blue on top.
+
+Add this to `mkdocs.yml`:
+
+```yaml
+theme:
+  palette:
+    primary: blue
 ```
