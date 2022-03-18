@@ -66,3 +66,8 @@ jobs:
       - run: pip install mkdocs-material 
       - run: mkdocs gh-deploy --force
 ```
+
+Go to GitHub &#8594; Settings &#8594; Pages &#8594; Source and choose `gh-pages` branch, and click `Save`.
+
+
+
