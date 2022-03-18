@@ -3,6 +3,8 @@ site_author: David G Oppenheimer
 site_description: >-
   My notes for preparing, running, and analyzing molecular dynamics simulations using Google Colab and Jupyter notebooks
 
+repo_url: https://github.com/dgoppenheimer/mk-test4
+
 # Copyright
 copyright: Copyright &copy; 2022 David G Oppenheimer
 

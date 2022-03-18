@@ -172,7 +172,7 @@ Continue customization.
 
 Open `material/overrides/main.html` and delete the announcement bar.
 
-### Change Landing Page Image
+### Modify the Landing Page
 
 - Open `material/overrides/home.html` and under `<!-- Hero image -->`, change `src="assets/images/illustrations/home.png"` to `src="assets/images/illustration.png"`.
 - Also delete/change the text under `<!-- Hero content -->`.
@@ -187,6 +187,8 @@ site_description: >-
 
 # Copyright
 copyright: Copyright &copy; 2022 David G Oppenheimer
+
+repo_url: https://github.com/dgoppenheimer/mk-test4
 ```
 
 ### Test Deploy on GitHub
@@ -195,9 +197,18 @@ Run the git stuff and push to GitHub.
 
 !!! success
 
-    Great. It works. I'll keep customizing the landing page and start setting up site navigation. It appears the previous failure to deploy had something to do with how I set up the landing page.
+    Great. It works. I'll keep customizing the landing page and start setting up site navigation. It appears the previous failure to deploy had something to do with how I set up the landing page. Also I do not have `site_url: https://dgoppenheimer.github.io/mk-test/` in my `mkdocs.yml` file.
 
 
+In `material/overrides/main-styles.html` change the color for `linear-gradient(to bottom, var(--md-primary-fg-color), #2a978d 99%, #fff 99%)` to `#BB8FCE`. This better matches the colors in the image better than the original teal.
+
+```css
+.tx-container { 
+        height: fit-content;
+        padding-top: 0rem;
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: white' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), #BB8FCE 99%, #fff 99%)
+}
+```
 
 
 
