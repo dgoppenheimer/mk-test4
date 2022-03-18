@@ -183,11 +183,22 @@ Open `material/overrides/main.html` and delete the announcement bar.
 ```yaml
 site_author: David G Oppenheimer
 site_description: >-
-  Notes for running and analyzing molecular dynamics simulations
+  My notes for preparing, running, and analyzing molecular dynamics simulations using Google Colab and Jupyter notebooks
 
 # Copyright
 copyright: Copyright &copy; 2022 David G Oppenheimer
 ```
+
+### Test Deploy on GitHub
+
+Run the git stuff and push to GitHub.
+
+!!! success
+
+    Great. It works. I'll keep customizing the landing page and start setting up site navigation. It appears the previous failure to deploy had something to do with how I set up the landing page.
+
+
+
 
 
 
