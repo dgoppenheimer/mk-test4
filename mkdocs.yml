@@ -1,7 +1,7 @@
 site_name: Molecular Dynamics
 theme:
   name: material
-  custom_dir: overrides
+  custom_dir: docs/overrides
   logo: assets/logo.svg
   favicon: assets/images/favicon.png
 markdown_extensions:
