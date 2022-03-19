@@ -117,21 +117,6 @@ theme:
 
     I think the failure of the previous site to deploy to GitHub has to do with my changes to `index.html` or one of the partials when I created my landing page.
 
-### Navigation Features
-
-See [Setting up navigation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/) in the Material theme documentation for excellent instructions.
-
-- Add the following to `mkdocs.yml`:
-
-```yaml
-theme:
-  features:
-    - navigation.tracking
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.top
-```
-
 ### Footnotes
 
 Add the following to `mkdocs.yml`:
@@ -212,7 +197,24 @@ copyright: Copyright &copy; 2022 David G Oppenheimer
 
 ## Navigation
 
-The `nav` part of `mkdocs.yml` takes precedence when setting the page title. But I want a longer title on the page and a shorter one for the navigation links. I found this solution in the [mkdocs issues](https://github.com/mkdocs/mkdocs/issues/1795). Put this code in your `/overrides/main.html` file.
+### Navigation Features
+
+See [Setting up navigation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/) in the Material theme documentation for excellent instructions.
+
+- Add the following to `mkdocs.yml`:
+
+```yaml
+theme:
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+```
+
+The `nav` part of `mkdocs.yml` takes precedence when setting the page title. But I want a longer title on the page and a shorter one for the navigation links. I found this solution in the [mkdocs issues](https://github.com/mkdocs/mkdocs/issues/1795). 
+
+- Put this code in your `/overrides/main.html` file.
 
 ```jinja
 {% extends "base.html" %}
@@ -229,7 +231,23 @@ The `nav` part of `mkdocs.yml` takes precedence when setting the page title. But
 
 Now, just use an `<h1>` tag for any page title of any length. A shorter page title can be used in the `nav` section of `mkdocs.yml`.
 
+## Plugin for Video
 
+[mkdocs-video plugin](https://github.com/soulless-viewer/mkdocs-video)
+
+Images used for Jupyter need an odd syntax, but local images can be standard Markdown. Also can use html in markdown.
+
+### Usage
+
+This markdown code
+
+```markdown
+![type:video](https://www.youtube.com/embed/LXb3EKWsInQ)
+```
+
+will render as
+
+![type:video](https://www.youtube.com/embed/LXb3EKWsInQ)
 
 
 
