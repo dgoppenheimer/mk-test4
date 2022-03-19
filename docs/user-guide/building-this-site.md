@@ -2,6 +2,10 @@
 
 ## Getting Started
 
+!!! info
+
+    Almost all of the information for building this site came from the [Material for MkDocs Documentation](https://squidfunk.github.io/mkdocs-material/) website.
+
 - Run the following in Terminal.
 
 ```bash
@@ -298,4 +302,61 @@ You can also add dimensions to your images as well.
 
     ![Image title](https://dummyimage.com/800x400/eee/aaa){ width=300px }
 
+## MathJax
 
+I want to use equations on this site and [MathJax](https://www.mathjax.org/) provides an easy way to do this.
+
+!!! quote "from the [Material for MkDocs MathJax page](https://squidfunk.github.io/mkdocs-material/reference/mathjax/)"
+
+    Create a configuration file and add the following lines to `mkdocs.yml`:
+
+
+=== "docs/javascripts/mathjax.js"
+
+    ```js
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        ignoreHtmlClass: ".*|",
+        processHtmlClass: "arithmatex"
+      }
+    };
+
+    document$.subscribe(() => { 
+      MathJax.typesetPromise()
+    })
+    ```
+
+=== "mkdocs.yml"
+
+    ```yaml
+    markdown_extensions:
+      - pymdownx.arithmatex:
+          generic: true
+
+    extra_javascript:
+      - javascripts/mathjax.js
+      - https://polyfill.io/v3/polyfill.min.js?features=es6
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    ```
+
+Now you can use `$$...$$` to delimit a block for an equation:
+
+```js
+$$
+\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
+$$
+```
+
+which renders to
+
+$$
+\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
+$$
+
+Or use `$...$` for inline math like so: `$a\neq b$` renders to $a\neq b$.
