@@ -36,7 +36,10 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
   - footnotes
+  - attr_list
 
 plugins:
     - mkdocs-video

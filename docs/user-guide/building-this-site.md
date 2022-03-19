@@ -231,11 +231,9 @@ The `nav` part of `mkdocs.yml` takes precedence when setting the page title. But
 
 Now, just use an `<h1>` tag for any page title of any length. A shorter page title can be used in the `nav` section of `mkdocs.yml`.
 
-## Plugin for Video
+## Video Plugin
 
-[mkdocs-video plugin](https://github.com/soulless-viewer/mkdocs-video)
-
-Images used for Jupyter need an odd syntax, but local images can be standard Markdown. Also can use html in markdown.
+This plugin lets you use standard Markdown to display videos. See the [mkdocs-video plugin GitHub repository](https://github.com/soulless-viewer/mkdocs-video) for more information.
 
 ### Usage
 
@@ -249,7 +247,55 @@ will render as
 
 ![type:video](https://www.youtube.com/embed/LXb3EKWsInQ)
 
+## Images
 
+With the [Attribute Lists](https://python-markdown.github.io/extensions/attr_list/) Markdown extension you can add height, width, and alignment to images.
 
+- Add this to the `mkdocs.yml` file:
+
+```yaml
+markdown_extensions:
+  - attr_list
+```
+
+- Align images as follows:
+
+=== "aligned left"
+
+    ```markdown
+    ![Image title](https://dummyimage.com/300x300/eee/aaa){ align=left }
+    ```
+
+    ![Image title](https://dummyimage.com/300x300/eee/aaa){ align=left }
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare dui vel dolor semper sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam in erat odio. Quisque aliquam odio id interdum bibendum. Praesent non magna non risus fermentum vulputate. Nunc tincidunt urna risus, a lacinia metus hendrerit semper. Sed imperdiet blandit ante vel tempus. Morbi maximus elit sapien, sed ullamcorper magna consequat accumsan. Sed quis lorem placerat, pretium velit quis, egestas elit.
+
+=== "aligned right"
+
+    ```mk
+    ![Image title](https://dummyimage.com/300x300/eee/aaa){ align=right }
+    ```
+
+    ![Image title](https://dummyimage.com/300x300/eee/aaa){ align=right }
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare dui vel dolor semper sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam in erat odio. Quisque aliquam odio id interdum bibendum. Praesent non magna non risus fermentum vulputate. Nunc tincidunt urna risus, a lacinia metus hendrerit semper. Sed imperdiet blandit ante vel tempus. Morbi maximus elit sapien, sed ullamcorper magna consequat accumsan. Sed quis lorem placerat, pretium velit quis, egestas elit.
+
+You can also add dimensions to your images as well.
+
+=== "image width=200px"
+
+    ```mk
+    ![Image title](https://dummyimage.com/400x400/eee/aaa){ width=200px }
+    ```
+
+    ![Image title](https://dummyimage.com/400x400/eee/aaa){ width=200px }
+
+=== "image width=400px"
+
+    ```mk
+    ![Image title](https://dummyimage.com/800x400/eee/aaa){ width=300px }
+    ```
+
+    ![Image title](https://dummyimage.com/800x400/eee/aaa){ width=300px }
 
 
