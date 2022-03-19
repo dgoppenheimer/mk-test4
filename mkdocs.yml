@@ -38,6 +38,9 @@ markdown_extensions:
   - pymdownx.superfences
   - footnotes
 
+plugins:
+    - mkdocs-video
+
 #================================================================#
 # Mkdocs Navigation Tree
 #================================================================#
