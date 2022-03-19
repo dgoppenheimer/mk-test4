@@ -1,6 +1,8 @@
-# Building This Site Long Title for Page
+# Building This Site
 
 ## Getting Started
+
+- Run the following in Terminal.
 
 ```bash
 pip install mkdocs-material
@@ -9,10 +11,9 @@ cd ~/Sites
 mkdir mk-test
 cd mk-test
 mkdocs new .
-
 ```
 
-Add to `mkdocs.yml`:
+- Add the following to `mkdocs.yml` to enable the Material theme:
 
 ```yaml
 theme:
@@ -21,18 +22,22 @@ theme:
 
 ## Git Stuff
 
+- Create a repository and a `.gitignore` file, and commit the site.
+
 ```bash
 # in the mk-test4 directory
 git init
 touch .gitignore
 echo ".DS_Store" >> .gitignore
 echo ".gitignore" >> .gitignore
+echo "site/" >> .gitignore
 git status
 git add .
 git commit -m "initial commit"
 ```
 
-Go to GitHub and create a new repository `mk-test4`.
+- Go to `GitHub.com` in a browser and create a new repository `mk-test4`.
+- In terminal, set up the remote branch and push the site to the remote repository.
 
 ```bash
 git remote add origin https://github.com/dgoppenheimer/mk-test4.git
@@ -42,9 +47,8 @@ git push -u origin main
 
 ## Publishing the Site
 
-From [Publishing your site](https://squidfunk.github.io/mkdocs-material/publishing-your-site/)
-
-Create `.github/workflows/ci.yml`
+- See [Publishing your site](https://squidfunk.github.io/mkdocs-material/publishing-your-site/) for instructions.
+- Create `.github/workflows/ci.yml` in the project root that contains the following:
 
 ```yaml
 name: ci 
@@ -65,21 +69,21 @@ jobs:
       - run: mkdocs gh-deploy --force
 ```
 
-Go to GitHub &#8594; Settings &#8594; Pages &#8594; Source and choose `gh-pages` branch, and click `Save`.
+- Go to the `mk-test4` project on GitHub &#8594; Settings &#8594; Pages &#8594; Source and choose `gh-pages` branch, and click `Save`.
 
 !!! success
 
-    So far, so good. I'll start changing a few things and see when the site breaks.
+    So far, so good. The site is visible on the web. I'll start changing a few things and see when the site breaks.
 
 ## Customize the Site
 
 See the following pages for tips:
 
-- [How do I specify custom primary color for mkdocs-material?](https://stackoverflow.com/questions/63017898/how-do-i-specify-custom-primary-color-for-mkdocs-material)  
-- [Changing the colors](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/)  
-- [Customization](https://squidfunk.github.io/mkdocs-material/customization/)
+[How do I specify custom primary color for mkdocs-material?](https://stackoverflow.com/questions/63017898/how-do-i-specify-custom-primary-color-for-mkdocs-material)  
+[Changing the colors](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/)  
+[Customization](https://squidfunk.github.io/mkdocs-material/customization/)
 
-Add the following to `mkdocs.yml`.
+- Add the following to `mkdocs.yml`.
 
 ```yaml
 markdown_extensions:
@@ -96,7 +100,7 @@ material/overrides/assets/logo.svg
 material/overrides/favicon.ico
 ```
 
-Add the following to `mkdocs.yml` to tell mkdocs where to find theme overrides:
+- Add the following to `mkdocs.yml` to tell mkdocs where to find theme overrides:
 
 ```yaml
 theme:
@@ -117,7 +121,7 @@ theme:
 
 See [Setting up navigation](https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/) in the Material theme documentation for excellent instructions.
 
-Add the following to `mkdocs.yml`:
+- Add the following to `mkdocs.yml`:
 
 ```yaml
 theme:
@@ -139,7 +143,7 @@ markdown_extensions:
 
 ### Change Colors on the Landing Page
 
-The lower purple is okay, but I want to see how it looks with a lighter blue on top.
+The lower teal is okay, but I want to see how it looks with a lighter blue on top.
 
 Add this to `mkdocs.yml`:
 
@@ -151,7 +155,7 @@ theme:
 
 Okay, I got most of the home page stuff shown on [Binbash Leverage™ Documentation](https://leverage.binbash.com.ar/), following their [GitHub repository](https://github.com/binbashar/le-ref-architecture-doc/) structure.
 
-To the `/docs/index.md` file add the following at the top of the file:
+- To the `/docs/index.md` file, add the following at the top of the file:
 
 ```md
 ---
@@ -162,13 +166,13 @@ template: overrides/home.html
 
 !!! success
 
-    The site deployed properly and is visible on GitHub.
+    The site deployed properly and is still visible on GitHub.
 
-Continue customization.
+I'll continue the customization of the site.
 
 ### Remove the LinkedIn link
 
-Open `material/overrides/main.html` and delete the announcement bar.
+- Open `material/overrides/main.html` and delete the announcement bar.
 
 ### Modify the Landing Page
 
@@ -190,14 +194,13 @@ copyright: Copyright &copy; 2022 David G Oppenheimer
 
 ### Test Deploy on GitHub
 
-Run the git stuff and push to GitHub.
+- Run the git stuff and push to GitHub.
 
 !!! success
 
     Great. It works. I'll keep customizing the landing page and start setting up site navigation. It appears the previous failure to deploy had something to do with how I set up the landing page.
 
-
-In `material/overrides/main-styles.html` change the color for `linear-gradient(to bottom, var(--md-primary-fg-color), #2a978d 99%, #fff 99%)` to `#BB8FCE`. This better matches the colors in the image better than the original teal.
+- In `material/overrides/main-styles.html` change the `#2a978d` color in `linear-gradient(to bottom, var(--md-primary-fg-color), #2a978d 99%, #fff 99%)` to `#BB8FCE`. This better matches the colors in the image better than the original teal. The code should look like this:
 
 ```css
 .tx-container { 
@@ -224,7 +227,7 @@ The `nav` part of `mkdocs.yml` takes precedence when setting the page title. But
 {% endblock %}
 ```
 
-Now just use an `<h1>` tag for any page title of any length. A shorter page title can be used in the `nav` section of `mkdocs.yml`.
+Now, just use an `<h1>` tag for any page title of any length. A shorter page title can be used in the `nav` section of `mkdocs.yml`.
 
 
 
