@@ -61,3 +61,8 @@ nav:
     - Introduction: user-guide/introduction.md
     - Getting Started: user-guide/getting-started.md
     - Building This Site: user-guide/building-this-site.md
+  - Course: 
+    - course/index.md
+    - Course Organization: course/course-organization.md
+    - Lab 00: course/lab00-preparation.md
+    - Lab 01: course/lab01-jupyter-colab.md
