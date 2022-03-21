@@ -1,0 +1,1139 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="My notes for preparing, running, and analyzing molecular dynamics simulations using Google Colab and Jupyter notebooks">
+      
+      
+        <meta name="author" content="David G Oppenheimer">
+      
+      
+        <link rel="canonical" href="https://dgoppenheimer.github.io/mk-test4/user-guide/building-this-site/">
+      
+      <link rel="icon" href="../../overrides/assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Building This Site - Molecular Dynamics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#building-this-site" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Molecular Dynamics" class="md-header__button md-logo" aria-label="Molecular Dynamics" data-md-component="logo">
+      
+  <img src="../../overrides/assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Molecular Dynamics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Building This Site
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dgoppenheimer/mk-test4/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dgoppenheimer/mk-test4
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link md-tabs__link--active">
+        User Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../course/" class="md-tabs__link">
+        Course
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Molecular Dynamics" class="md-nav__button md-logo" aria-label="Molecular Dynamics" data-md-component="logo">
+      
+  <img src="../../overrides/assets/logo.svg" alt="logo">
+
+    </a>
+    Molecular Dynamics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dgoppenheimer/mk-test4/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dgoppenheimer/mk-test4
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Building This Site
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Building This Site
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-stuff" class="md-nav__link">
+    Git Stuff
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing-the-site" class="md-nav__link">
+    Publishing the Site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customize-the-site" class="md-nav__link">
+    Customize the Site
+  </a>
+  
+    <nav class="md-nav" aria-label="Customize the Site">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#footnotes" class="md-nav__link">
+    Footnotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-colors-on-the-landing-page" class="md-nav__link">
+    Change Colors on the Landing Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-the-linkedin-link" class="md-nav__link">
+    Remove the LinkedIn link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-the-landing-page" class="md-nav__link">
+    Modify the Landing Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-additions-to-mkdocsyml" class="md-nav__link">
+    More Additions to mkdocs.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-deploy-on-github" class="md-nav__link">
+    Test Deploy on GitHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    Navigation
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation-features" class="md-nav__link">
+    Navigation Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-plugin" class="md-nav__link">
+    Video Plugin
+  </a>
+  
+    <nav class="md-nav" aria-label="Video Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathjax" class="md-nav__link">
+    MathJax
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Course
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Course" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Course
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course/" class="md-nav__link">
+        Practical Molecular Dynamics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course/course-organization/" class="md-nav__link">
+        Course Organization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course/lab00-preparation/" class="md-nav__link">
+        Lab 00
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course/lab01-jupyter-colab/" class="md-nav__link">
+        Lab 01
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-stuff" class="md-nav__link">
+    Git Stuff
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing-the-site" class="md-nav__link">
+    Publishing the Site
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customize-the-site" class="md-nav__link">
+    Customize the Site
+  </a>
+  
+    <nav class="md-nav" aria-label="Customize the Site">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#footnotes" class="md-nav__link">
+    Footnotes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-colors-on-the-landing-page" class="md-nav__link">
+    Change Colors on the Landing Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-the-linkedin-link" class="md-nav__link">
+    Remove the LinkedIn link
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify-the-landing-page" class="md-nav__link">
+    Modify the Landing Page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-additions-to-mkdocsyml" class="md-nav__link">
+    More Additions to mkdocs.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-deploy-on-github" class="md-nav__link">
+    Test Deploy on GitHub
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    Navigation
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation-features" class="md-nav__link">
+    Navigation Features
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-plugin" class="md-nav__link">
+    Video Plugin
+  </a>
+  
+    <nav class="md-nav" aria-label="Video Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    Images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathjax" class="md-nav__link">
+    MathJax
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/dgoppenheimer/mk-test4/edit/master/docs/user-guide/building-this-site.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="building-this-site">Building This Site</h1>
+<h2 id="getting-started">Getting Started</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Almost all of the information for building this site came from the <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs Documentation</a> website.</p>
+</div>
+<ul>
+<li>Run the following in Terminal.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>pip install mkdocs-material
+
+<span class="nb">cd</span> ~/Sites
+mkdir mk-test
+<span class="nb">cd</span> mk-test
+mkdocs new .
+</code></pre></div>
+<ul>
+<li>Add the following to <code>mkdocs.yml</code> to enable the Material theme:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span><span class="w"></span>
+</code></pre></div>
+<h2 id="git-stuff">Git Stuff</h2>
+<ul>
+<li>Create a repository and a <code>.gitignore</code> file, and commit the site.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># in the mk-test4 directory</span>
+git init
+touch .gitignore
+<span class="nb">echo</span> <span class="s2">&quot;.DS_Store&quot;</span> &gt;&gt; .gitignore
+<span class="nb">echo</span> <span class="s2">&quot;.gitignore&quot;</span> &gt;&gt; .gitignore
+<span class="nb">echo</span> <span class="s2">&quot;site/&quot;</span> &gt;&gt; .gitignore
+git status
+git add .
+git commit -m <span class="s2">&quot;initial commit&quot;</span>
+</code></pre></div>
+<ul>
+<li>Go to <code>GitHub.com</code> in a browser and create a new repository <code>mk-test4</code>.</li>
+<li>In terminal, set up the remote branch and push the site to the remote repository.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>git remote add origin https://github.com/dgoppenheimer/mk-test4.git
+git branch -M main
+git push -u origin main
+</code></pre></div>
+<h2 id="publishing-the-site">Publishing the Site</h2>
+<ul>
+<li>See <a href="https://squidfunk.github.io/mkdocs-material/publishing-your-site/">Publishing your site</a> for instructions.</li>
+<li>Create <code>.github/workflows/ci.yml</code> in the project root that contains the following:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ci</span><span class="w"> </span>
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">deploy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.x</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install mkdocs-material</span><span class="w"> </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs gh-deploy --force</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>Go to the <code>mk-test4</code> project on GitHub &#8594; Settings &#8594; Pages &#8594; Source and choose <code>gh-pages</code> branch, and click <code>Save</code>.</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>So far, so good. The site is visible on the web. I'll start changing a few things and see when the site breaks.</p>
+</div>
+<h2 id="customize-the-site">Customize the Site</h2>
+<p>See the following pages for tips:</p>
+<p><a href="https://stackoverflow.com/questions/63017898/how-do-i-specify-custom-primary-color-for-mkdocs-material">How do I specify custom primary color for mkdocs-material?</a><br />
+<a href="https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/">Changing the colors</a><br />
+<a href="https://squidfunk.github.io/mkdocs-material/customization/">Customization</a></p>
+<ul>
+<li>Add the following to <code>mkdocs.yml</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admonition</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>Create the <code>material/overrides/assets/images</code> directories, and add the favicon and logo images:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>material/overrides/assets/images/favicon.png
+material/overrides/assets/logo.svg
+material/overrides/favicon.ico
+</code></pre></div>
+<ul>
+<li>Add the following to <code>mkdocs.yml</code> to tell mkdocs where to find theme overrides:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">custom_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span><span class="w"></span>
+<span class="w">  </span><span class="nt">logo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overrides/assets/logo.svg</span><span class="w"></span>
+<span class="w">  </span><span class="nt">favicon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">overrides/assets/images/favicon.png</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>The site builds and deploys fine on GitHub.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>I think the failure of the previous site to deploy to GitHub has to do with my changes to <code>index.html</code> or one of the partials when I created my landing page.</p>
+</div>
+<h3 id="footnotes">Footnotes</h3>
+<p>Add the following to <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">footnotes</span><span class="w"></span>
+</code></pre></div>
+<h3 id="change-colors-on-the-landing-page">Change Colors on the Landing Page</h3>
+<p>The lower teal is okay, but I want to see how it looks with a lighter blue on top.</p>
+<p>Add this to <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">palette</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blue</span><span class="w"></span>
+</code></pre></div>
+<p>Okay, I got most of the home page stuff shown on <a href="https://leverage.binbash.com.ar/">Binbash Leverage™ Documentation</a>, following their <a href="https://github.com/binbashar/le-ref-architecture-doc/">GitHub repository</a> structure.</p>
+<ul>
+<li>To the <code>/docs/index.md</code> file, add the following at the top of the file:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>---
+title: Molecular Dynamics
+<span class="gu">template: overrides/home.html</span>
+<span class="gu">---</span>
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>The site deployed properly and is still visible on GitHub.</p>
+</div>
+<p>I'll continue the customization of the site.</p>
+<h3 id="remove-the-linkedin-link">Remove the LinkedIn link</h3>
+<ul>
+<li>Open <code>material/overrides/main.html</code> and delete the announcement bar.</li>
+</ul>
+<h3 id="modify-the-landing-page">Modify the Landing Page</h3>
+<ul>
+<li>Open <code>material/overrides/home.html</code> and under <code>&lt;!-- Hero image --&gt;</code>, change <code>src="assets/images/illustrations/home.png"</code> to <code>src="assets/images/illustration.png"</code>.</li>
+<li>Also delete/change the text under <code>&lt;!-- Hero content --&gt;</code>.</li>
+<li>Remove the other sections.</li>
+</ul>
+<h3 id="more-additions-to-mkdocsyml">More Additions to <code>mkdocs.yml</code></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">site_author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">David G Oppenheimer</span><span class="w"></span>
+<span class="nt">site_description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;-</span><span class="w"></span>
+<span class="w">  </span><span class="no">My notes for preparing, running, and analyzing molecular dynamics simulations using Google Colab and Jupyter notebooks</span><span class="w"></span>
+<span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://dgoppenheimer.github.io/mk-test4/</span><span class="w"></span>
+<span class="nt">repo_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;dgoppenheimer/mk-test4&quot;</span><span class="w"></span>
+<span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/dgoppenheimer/mk-test4</span><span class="w"></span>
+<span class="nt">copyright</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Copyright &amp;copy; 2022 David G Oppenheimer</span><span class="w"></span>
+</code></pre></div>
+<h3 id="test-deploy-on-github">Test Deploy on GitHub</h3>
+<ul>
+<li>Run the git stuff and push to GitHub.</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>Great. It works. I'll keep customizing the landing page and start setting up site navigation. It appears the previous failure to deploy had something to do with how I set up the landing page.</p>
+</div>
+<ul>
+<li>In <code>material/overrides/main-styles.html</code> change the <code>#2a978d</code> color in <code>linear-gradient(to bottom, var(--md-primary-fg-color), #2a978d 99%, #fff 99%)</code> to <code>#BB8FCE</code>. This better matches the colors in the image better than the original teal. The code should look like this:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">tx-container</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="n">fit-content</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">padding-top</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">rem</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s2">&quot;data:image/svg+xml;utf8,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 1123 258&#39;&gt;&lt;path d=&#39;M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z&#39; style=&#39;fill: white&#39; /&gt;&lt;/svg&gt;&quot;</span><span class="p">)</span><span class="w"> </span><span class="kc">no-repeat</span><span class="w"> </span><span class="kc">bottom</span><span class="p">,</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="kc">to</span><span class="w"> </span><span class="kc">bottom</span><span class="p">,</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--md-primary-fg-color</span><span class="p">),</span><span class="w"> </span><span class="mh">#BB8FCE</span><span class="w"> </span><span class="mi">99</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mh">#fff</span><span class="w"> </span><span class="mi">99</span><span class="kt">%</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="navigation">Navigation</h2>
+<h3 id="navigation-features">Navigation Features</h3>
+<p>See <a href="https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/">Setting up navigation</a> in the Material theme documentation for excellent instructions.</p>
+<ul>
+<li>Add the following to <code>mkdocs.yml</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tracking</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs.sticky</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.top</span><span class="w"></span>
+</code></pre></div>
+<p>The <code>nav</code> part of <code>mkdocs.yml</code> takes precedence when setting the page title. But I want a longer title on the page and a shorter one for the navigation links. I found this solution in the <a href="https://github.com/mkdocs/mkdocs/issues/1795">mkdocs issues</a>. </p>
+<ul>
+<li>Put this code in your <code>/overrides/main.html</code> file.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">if</span> <span class="nv">page.toc</span><span class="o">|</span><span class="nf">first</span> <span class="k">is</span> <span class="nf">defined</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">set</span> <span class="nv">_title</span> <span class="o">=</span> <span class="nv">page.toc.items</span><span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="nv">.title</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">set</span> <span class="nv">_title</span> <span class="o">=</span> <span class="nv">page.title</span><span class="o">|</span><span class="nf">striptags</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">htmltitle</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">&lt;title&gt;</span><span class="cp">{{</span> <span class="nv">_title</span> <span class="cp">}}</span><span class="x">&lt;/title&gt;</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+</code></pre></div>
+<p>Now, just use an <code>&lt;h1&gt;</code> tag for any page title of any length. A shorter page title can be used in the <code>nav</code> section of <code>mkdocs.yml</code>.</p>
+<h2 id="video-plugin">Video Plugin</h2>
+<p>This plugin lets you use standard Markdown to display videos. See the <a href="https://github.com/soulless-viewer/mkdocs-video">mkdocs-video plugin GitHub repository</a> for more information.</p>
+<h3 id="usage">Usage</h3>
+<p>This markdown code</p>
+<div class="highlight"><pre><span></span><code>![<span class="nt">type:video</span>](<span class="na">https://www.youtube.com/embed/LXb3EKWsInQ</span>)
+</code></pre></div>
+<p>will render as</p>
+<p><iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></p>
+<h2 id="images">Images</h2>
+<p>With the <a href="https://python-markdown.github.io/extensions/attr_list/">Attribute Lists</a> Markdown extension you can add height, width, and alignment to images.</p>
+<ul>
+<li>Add this to the <code>mkdocs.yml</code> file:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">attr_list</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>Align images as follows:</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">aligned left</label><label for="__tabbed_1_2">aligned right</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>![<span class="nt">Image title</span>](<span class="na">https://dummyimage.com/300x300/eee/aaa</span>){ align=left }
+</code></pre></div>
+<p><img align="left" alt="Image title" src="https://dummyimage.com/300x300/eee/aaa" /></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare dui vel dolor semper sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam in erat odio. Quisque aliquam odio id interdum bibendum. Praesent non magna non risus fermentum vulputate. Nunc tincidunt urna risus, a lacinia metus hendrerit semper. Sed imperdiet blandit ante vel tempus. Morbi maximus elit sapien, sed ullamcorper magna consequat accumsan. Sed quis lorem placerat, pretium velit quis, egestas elit.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>![Image title](https://dummyimage.com/300x300/eee/aaa){ align=right }
+</code></pre></div>
+<p><img align="right" alt="Image title" src="https://dummyimage.com/300x300/eee/aaa" /></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare dui vel dolor semper sagittis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam in erat odio. Quisque aliquam odio id interdum bibendum. Praesent non magna non risus fermentum vulputate. Nunc tincidunt urna risus, a lacinia metus hendrerit semper. Sed imperdiet blandit ante vel tempus. Morbi maximus elit sapien, sed ullamcorper magna consequat accumsan. Sed quis lorem placerat, pretium velit quis, egestas elit.</p>
+</div>
+</div>
+</div>
+<p>You can also add dimensions to your images as well.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">image width=200px</label><label for="__tabbed_2_2">image width=400px</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>![Image title](https://dummyimage.com/400x400/eee/aaa){ width=200px }
+</code></pre></div>
+<p><img alt="Image title" src="https://dummyimage.com/400x400/eee/aaa" width="200px" /></p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>![Image title](https://dummyimage.com/800x400/eee/aaa){ width=300px }
+</code></pre></div>
+<p><img alt="Image title" src="https://dummyimage.com/800x400/eee/aaa" width="300px" /></p>
+</div>
+</div>
+</div>
+<h2 id="mathjax">MathJax</h2>
+<p>I want to use equations on this site and <a href="https://www.mathjax.org/">MathJax</a> provides an easy way to do this.</p>
+<div class="admonition quote">
+<p class="admonition-title">from the <a href="https://squidfunk.github.io/mkdocs-material/reference/mathjax/">Material for MkDocs MathJax page</a></p>
+<p>Create a configuration file and add the following lines to <code>mkdocs.yml</code>:</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">docs/javascripts/mathjax.js</label><label for="__tabbed_3_2">mkdocs.yml</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">tex</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[[</span><span class="s2">&quot;\\(&quot;</span><span class="p">,</span> <span class="s2">&quot;\\)&quot;</span><span class="p">]],</span>
+    <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[[</span><span class="s2">&quot;\\[&quot;</span><span class="p">,</span> <span class="s2">&quot;\\]&quot;</span><span class="p">]],</span>
+    <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">processEnvironments</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="p">},</span>
+  <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">ignoreHtmlClass</span><span class="o">:</span> <span class="s2">&quot;.*|&quot;</span><span class="p">,</span>
+    <span class="nx">processHtmlClass</span><span class="o">:</span> <span class="s2">&quot;arithmatex&quot;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nb">document</span><span class="nx">$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> 
+  <span class="nx">MathJax</span><span class="p">.</span><span class="nx">typesetPromise</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.arithmatex</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">generic</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="nt">extra_javascript</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javascripts/mathjax.js</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://polyfill.io/v3/polyfill.min.js?features=es6</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Now you can use <code>$$...$$</code> to delimit a block for an equation:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">$$</span>
+<span class="err">\</span><span class="nx">operatorname</span><span class="p">{</span><span class="nx">ker</span><span class="p">}</span> <span class="nx">f</span><span class="o">=</span><span class="err">\</span><span class="p">{</span><span class="nx">g</span><span class="err">\</span><span class="ow">in</span> <span class="nx">G</span><span class="o">:</span><span class="nx">f</span><span class="p">(</span><span class="nx">g</span><span class="p">)</span><span class="o">=</span><span class="nx">e_</span><span class="p">{</span><span class="nx">H</span><span class="p">}</span><span class="err">\</span><span class="p">}{</span><span class="err">\</span><span class="nx">mbox</span><span class="p">{.}}</span>
+<span class="nx">$$</span>
+</code></pre></div>
+<p>which renders to</p>
+<div class="arithmatex">\[
+\operatorname{ker} f=\{g\in G:f(g)=e_{H}\}{\mbox{.}}
+\]</div>
+<p>Or use <code>$...$</code> for inline math like so: <code>$a\neq b$</code> renders to <span class="arithmatex">\(a\neq b\)</span>.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../getting-started/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Getting Started" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Getting Started
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../course/" class="md-footer__link md-footer__link--next" aria-label="Next: Practical Molecular Dynamics" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Practical Molecular Dynamics
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 David G Oppenheimer
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
